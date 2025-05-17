@@ -4,12 +4,21 @@ import CustomInput from "@/component/ui/CustomInput";
 import { useHandleFormActions } from "@/hooks/useHandleFormActions";
 import Styles from "./styles.module.css";
 import CustomButton from "@/component/ui/CustomButton";
+import { useValidateForm } from "@/hooks/useValidateForm";
 
 const OwnerInformationForm = () => {
   const { formData, handleChange, handleSubmit } = useHandleFormActions();
+  const { errors, validateForm } = useValidateForm(formData);
+
+  const handleFormSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (validateForm()) {
+      handleSubmit();
+    }
+  };
 
   return (
-    <form className={Styles.form} onSubmit={handleSubmit}>
+    <form className={Styles.form} onSubmit={handleFormSubmit}>
       <div className={Styles.wrapper}>
         <h3 className={Styles.heading}>
           لطفا اطلاعات شخصی مالک خودرو را وارد کنید:
@@ -21,6 +30,7 @@ const OwnerInformationForm = () => {
           placeholder="کد ملی"
           type="number"
           name="nationalId"
+          errorMessage={errors.nationalId}
         />
 
         <CustomInput
@@ -29,13 +39,14 @@ const OwnerInformationForm = () => {
           placeholder="شماره تلفن همراه"
           type="number"
           name="phoneNumber"
+          errorMessage={errors.phoneNumber}
         />
       </div>
 
       <div className={Styles.wrapper}>
         <h3 className={Styles.heading}>آدرس جهت درج روی بیمه نامه </h3>
 
-        <p className={Styles.text}>
+        <p className={`${Styles.text} ${errors.address && Styles.error}`}>
           لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
         </p>
 
@@ -45,12 +56,7 @@ const OwnerInformationForm = () => {
       </div>
 
       <div className={Styles.buttonWrapper}>
-        <CustomButton
-          variant="primary"
-          type="button"
-          disabled
-          onClick={() => {}}
-        >
+        <CustomButton variant="primary" type="submit" onClick={() => {}}>
           تایید و ادامه
         </CustomButton>
       </div>

@@ -10,10 +10,8 @@ export const useHandleFormActions = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     console.log("Form submitted:", formData);
-    window.location.href = "/success";
   };
 
   return { formData, handleChange, handleSubmit };
