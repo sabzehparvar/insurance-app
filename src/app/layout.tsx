@@ -1,8 +1,9 @@
+import type { Metadata } from "next";
 import "./globals.css";
 import localFont from "next/font/local";
 
 const vazirFont = localFont({
-  src: "../public/fonts/Vazirmatn-Regular.woff2",
+  src: "../../public/fonts/Vazirmatn-Regular.woff2",
 });
 
 export default function RootLayout({
