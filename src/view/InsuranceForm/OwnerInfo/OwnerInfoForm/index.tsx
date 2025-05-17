@@ -9,11 +9,11 @@ const OwnerInformationForm = () => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3 className={Styles.heading}>
-        لطفا اطلاعات شخصی مالک خودرو را وارد کنید:
-      </h3>
+      <div className={Styles.wrapper}>
+        <h3 className={Styles.heading}>
+          لطفا اطلاعات شخصی مالک خودرو را وارد کنید:
+        </h3>
 
-      <div>
         <CustomInput
           onChange={handleChange}
           value={formData.nationalId}
@@ -29,6 +29,14 @@ const OwnerInformationForm = () => {
           type="number"
           name="phoneNumber"
         />
+      </div>
+
+      <div className={Styles.wrapper}>
+        <h3 className={Styles.heading}>آدرس جهت درج روی بیمه نامه </h3>
+
+        <p className={Styles.text}>
+          لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
+        </p>
       </div>
     </form>
   );
