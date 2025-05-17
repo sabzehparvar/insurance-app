@@ -1,5 +1,5 @@
 
-import Styles from "./style.module.css";
+import Styles from "./styles.module.css";
 export interface InputProps {
   type?: string;
   name: string;
