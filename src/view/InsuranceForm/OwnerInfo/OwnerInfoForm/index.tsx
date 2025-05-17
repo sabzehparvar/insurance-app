@@ -3,12 +3,13 @@
 import CustomInput from "@/component/ui/CustomInput";
 import { useHandleFormActions } from "@/hooks/useHandleFormActions";
 import Styles from "./styles.module.css";
+import CustomButton from "@/component/ui/CustomButton";
 
 const OwnerInformationForm = () => {
   const { formData, handleChange, handleSubmit } = useHandleFormActions();
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={Styles.form} onSubmit={handleSubmit}>
       <div className={Styles.wrapper}>
         <h3 className={Styles.heading}>
           لطفا اطلاعات شخصی مالک خودرو را وارد کنید:
@@ -37,6 +38,21 @@ const OwnerInformationForm = () => {
         <p className={Styles.text}>
           لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
         </p>
+
+        <CustomButton variant="tertiary" type="button" onClick={() => {}}>
+          انتخاب از آدرس‌های من
+        </CustomButton>
+      </div>
+
+      <div className={Styles.buttonWrapper}>
+        <CustomButton
+          variant="primary"
+          type="button"
+          disabled
+          onClick={() => {}}
+        >
+          تایید و ادامه
+        </CustomButton>
       </div>
     </form>
   );
