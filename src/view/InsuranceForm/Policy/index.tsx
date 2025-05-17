@@ -4,7 +4,7 @@ import { CarInsuranceData } from "@/utils";
 import Styles from "./styles.module.css";
 import CarInfoList from "./CarInfoList";
 
-const PolicyInformation = () => {
+const InsuranceInfo = () => {
   return (
     <section>
       <SectionHeader title="مشخصات بیمه نامه" />
@@ -25,4 +25,4 @@ const PolicyInformation = () => {
   );
 };
 
-export default PolicyInformation;
+export default InsuranceInfo;

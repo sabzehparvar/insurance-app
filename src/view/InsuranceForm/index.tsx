@@ -1,10 +1,13 @@
 
-const InsuranceForm = () => {
+import InsuranceInfo from "./Policy";
+import OwnerInfo from "./OwnerInfo";
+const InsuranceInformation = () => {
   return (
     <main>
-     something
+      <InsuranceInfo />
+      <OwnerInfo />
     </main>
   );
 };
 
-export default InsuranceForm;
+export default InsuranceInformation;
