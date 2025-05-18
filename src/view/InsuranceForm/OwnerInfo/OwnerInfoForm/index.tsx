@@ -1,7 +1,8 @@
 "use client";
-import CustomInput from "@/component/ui/CustomInput";
+
 import { useHandleFormActions } from "@/hooks/useHandleFormActions";
 import Styles from "./styles.module.css";
+import CustomInput from "@/component/ui/CustomInput";
 import CustomButton from "@/component/ui/CustomButton";
 import { useValidateForm } from "@/hooks/useValidateForm";
 import { useRouter } from "next/navigation";
@@ -55,7 +56,7 @@ const OwnerInformationForm = () => {
           variant="tertiary"
           type="button"
           onClick={() => {
-            router.push("/?modal=list", { scroll: false });
+            router.push("/?modal=address", { scroll: false });
           }}
         >
           انتخاب از آدرس‌های من
