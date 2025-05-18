@@ -1,11 +1,11 @@
 import { CloseIcon } from "@/utils/icons";
 import Styles from "./styles.module.css";
-import { OrderAddress } from "@/context/formContext";
-import CustomInput from "@/component/ui/CustomInput";
+import CustomInput from "@/components/ui/CustomInput";
+import { OrderAddress } from "@/interfaces/Order";
 
 interface AddressItemProps {
   address: OrderAddress;
-  onDelete: () => void;
+  onDelete: (id: string) => void;
   onChange: () => void;
 }
 
@@ -13,7 +13,7 @@ const AddressItem = ({ address, onDelete, onChange }: AddressItemProps) => {
   return (
     <li className={Styles.item}>
       <CustomInput
-        name={address.id}
+        name={"address"}
         value={address.id}
         onChange={onChange}
         type="radio"
@@ -28,7 +28,7 @@ const AddressItem = ({ address, onDelete, onChange }: AddressItemProps) => {
         <p className={Styles.text}>{address.details}</p>
       </div>
 
-      <button className={Styles.close} onClick={onDelete}>
+      <button className={Styles.close} onClick={() => onDelete(address.id)}>
         <CloseIcon size={10} color="#FFA5A5" />
       </button>
     </li>
