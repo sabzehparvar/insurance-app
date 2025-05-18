@@ -1,7 +1,7 @@
 import { CloseIcon } from "@/utils/icons";
 import Styles from "./styles.module.css";
-import { OrderAddress } from "@/context/formContext";
 import CustomInput from "@/component/ui/CustomInput";
+import { OrderAddress } from "@/context/formContext";
 
 interface AddressItemProps {
   address: OrderAddress;
@@ -13,7 +13,7 @@ const AddressItem = ({ address, onDelete, onChange }: AddressItemProps) => {
   return (
     <li className={Styles.item}>
       <CustomInput
-        name={address.id}
+        name={"address"}
         value={address.id}
         onChange={onChange}
         type="radio"
