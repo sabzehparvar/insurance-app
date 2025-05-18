@@ -1,12 +1,17 @@
-import SectionHeader from "@/component/SectionHeader";
-import OwnerInformationForm from "./OwnerInfoForm";
-const OwnerInfo = () => {
+import SectionHeader from "@/components/shared/SectionHeader";
+import Styles from "./styles.module.css";
+import OwnerInformationForm from "./OwnerInformationForm";
+
+const OwnerInformation = () => {
   return (
     <section>
       <SectionHeader title="مشخصات مالک خودرو" />
-      <OwnerInformationForm/>
+
+      <div className={Styles.content}>
+        <OwnerInformationForm />
+      </div>
     </section>
   );
 };
 
-export default OwnerInfo;
+export default OwnerInformation;

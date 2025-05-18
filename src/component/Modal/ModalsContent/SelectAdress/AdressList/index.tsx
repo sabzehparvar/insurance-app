@@ -1,12 +1,11 @@
 "use client";
 
-
-import { useGetAddresses } from "@/hooks/API/GET/useGetAdresses";
-import AddressItem from "./AdressItem";
+import { useGetAddresses } from "@/hooks/API/GET/useGetAddresses";
+import AddressItem from "./AddressItem";
 import Styles from "./styles.module.css";
 
 const AddressList = () => {
-  const { data: addresses, loading } = useGetAddresses();
+  const { addresses, loading } = useGetAddresses();
 
   return (
     <ul className={Styles.list}>
