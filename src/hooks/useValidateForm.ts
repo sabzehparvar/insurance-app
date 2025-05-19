@@ -1,6 +1,6 @@
-import isNationalCodeValid from "@/functions/nationalCodeValidation";
-import isPhoneNumberValid from "@/functions/phoneNumberValidation";
-import { OrderInfo } from "@/context/formContext";
+import isNationalCodeValid from "@/functions/isNationalCodeValid";
+import isPhoneNumberValid from "@/functions/isPhoneNumberValid";
+import { OrderInfo } from "@/interfaces/Order";
 import { useState } from "react";
 import { z } from "zod";
 
@@ -11,7 +11,7 @@ const formSchema = z.object({
   phoneNumber: z
     .string()
     .refine((val) => isPhoneNumberValid(val), "شماره تلفن همراه معتبر نیست."),
-  address: z.string().nonempty(),
+  addressId: z.string().nonempty(),
 });
 
 export const useValidateForm = (formData: OrderInfo) => {
@@ -23,6 +23,7 @@ export const useValidateForm = (formData: OrderInfo) => {
       setErrors({});
       return true;
     } catch (err) {
+      console.error(err);
       if (err instanceof z.ZodError) {
         const fieldErrors: { [key: string]: string } = {};
         err.errors.forEach((error) => {
