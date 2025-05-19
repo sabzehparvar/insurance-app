@@ -1,11 +1,10 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import CustomButton from "@/components/ui/CustomButton";
+import CustomButton from "@/component/ui/CustomButton";
 import ModalFooter from "../../ModalFooter";
 import ModalHeader from "../../ModalHeader";
 import ModalWrapper from "../../ModalWrapper";
-import { useAddressContext } from "@/hooks/context/useAddressContext";
+import { useAddressContext } from "@/hooks/context/useAdressContext";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 import Styles from "./styles.module.css";

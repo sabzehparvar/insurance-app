@@ -1,12 +1,13 @@
 "use client";
-import CustomInput from "@/components/ui/CustomInput";
+
+import CustomInput from "@/component/ui/CustomInput";
 import { useHandleFormActions } from "@/hooks/useHandleFormActions";
 import Styles from "./styles.module.css";
-import CustomButton from "@/components/ui/CustomButton";
+import CustomButton from "@/component/ui/CustomButton";
 import { useValidateForm } from "@/hooks/useValidateForm";
 import { useRouter } from "next/navigation";
-import { useAddressContext } from "@/hooks/context/useAddressContext";
-import Spinner from "@/components/ui/Spinner";
+import { useAddressContext } from "@/hooks/context/useAdressContext";
+import Spinner from "@/component/ui/Spinner";
 
 const OwnerInformationForm = () => {
   const { formData, handleChange, handleSubmit, submitLoading } =
@@ -35,6 +36,7 @@ const OwnerInformationForm = () => {
           value={formData.nationalId}
           placeholder="کد ملی"
           type="number"
+          inputMode="numeric"
           name="nationalId"
           errorMessage={errors.nationalId}
         />
@@ -42,6 +44,7 @@ const OwnerInformationForm = () => {
         <CustomInput
           onChange={handleChange}
           value={formData.phoneNumber}
+          inputMode="numeric"
           placeholder="شماره تلفن همراه"
           type="number"
           name="phoneNumber"

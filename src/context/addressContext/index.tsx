@@ -1,6 +1,6 @@
 "use client";
 
-import { OrderAddress } from "@/interfaces/Order";
+import { OrderAddress } from "../formContext";
 import React, { createContext, ReactNode, useState } from "react";
 
 interface AddressContextType {

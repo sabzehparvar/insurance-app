@@ -1,10 +1,9 @@
 "use client";
 
-import Spinner from "@/components/ui/Spinner";
+import Spinner from "@/component/ui/Spinner";
 import AddressItem from "./AddressItem";
 import Styles from "./styles.module.css";
-import { useHandleAddresses } from "@/hooks/useHandleAddresses";
-
+import { useHandleAddresses } from "@/hooks/context/useHandleAdresses";
 const AddressList = ({
   selectedId,
   setSelectedId,

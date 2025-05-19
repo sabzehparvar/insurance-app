@@ -1,4 +1,5 @@
-import { OrderInfo } from "@/interfaces/Order";
+
+import { OrderInfo } from "@/context/formContext";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 

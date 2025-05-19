@@ -3,9 +3,9 @@
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 import dynamic from "next/dynamic";
-import Spinner from "@/components/ui/Spinner";
+import Spinner from "@/component/ui/Spinner";
 
-const SelectAddress = dynamic(() => import("../ModalsContent/SelectAddress"), {
+const SelectAddress = dynamic(() => import("../ModalsContent/SelectAdress"), {
   loading: () => <Spinner />,
 });
 

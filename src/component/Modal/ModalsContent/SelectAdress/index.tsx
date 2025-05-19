@@ -1,6 +1,6 @@
 "use client";
 
-import CustomButton from "@/components/ui/CustomButton";
+import CustomButton from "@/component/ui/CustomButton";
 import ModalFooter from "../../ModalFooter";
 import ModalHeader from "../../ModalHeader";
 import ModalWrapper from "../../ModalWrapper";

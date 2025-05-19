@@ -1,6 +1,7 @@
-import SectionHeader from "@/components/shared/SectionHeader";
+
+import SectionHeader from "@/component/SectionHeader";
 import Styles from "./styles.module.css";
-import OwnerInformationForm from "./OwnerInformationForm";
+import OwnerInformationForm from "./OwnerInfoForm";
 
 const OwnerInformation = () => {
   return (

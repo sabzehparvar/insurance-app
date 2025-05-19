@@ -1,6 +1,6 @@
-import isNationalCodeValid from "@/functions/isNationalCodeValid";
-import isPhoneNumberValid from "@/functions/isPhoneNumberValid";
-import { OrderInfo } from "@/interfaces/Order";
+import isNationalCodeValid from "@/functions/nationalCodeValidation";
+import isPhoneNumberValid from "@/functions/phoneNumberValidation";
+import { OrderInfo } from "@/context/formContext";
 import { useState } from "react";
 import { z } from "zod";
 

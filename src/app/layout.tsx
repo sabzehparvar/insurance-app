@@ -1,11 +1,10 @@
-
 import "./globals.css";
 import localFont from "next/font/local";
-import ModalManager from "@/components/shared/Modal/ModalManager";
+import ModalManager from "@/component/Modal/ModalManager";
 import { FormProvider } from "@/context/formContext";
 import { AddressProvider } from "@/context/addressContext";
 import { Suspense } from "react";
-import Spinner from "@/components/ui/Spinner";
+import Spinner from "@/component/ui/Spinner";
 
 const vazirFont = localFont({
   src: "../../public/fonts/Vazirmatn-Regular.woff2",

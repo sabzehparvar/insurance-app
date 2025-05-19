@@ -1,14 +1,13 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import CustomButton from "@/components/ui/CustomButton";
+import CustomButton from "@/component/ui/CustomButton";
 import ModalFooter from "../../ModalFooter";
 import ModalWrapper from "../../ModalWrapper";
 import { useRouter } from "next/navigation";
 import Styles from "./styles.module.css";
 import { useSubmitInsurance } from "@/hooks/API/POST/useSubmitInsurance";
 import { useFormContext } from "@/hooks/context/useFormContext";
-import Spinner from "@/components/ui/Spinner";
+import Spinner from "@/component/ui/Spinner";
 import { useValidateForm } from "@/hooks/useValidateForm";
 import { useEffect } from "react";
 

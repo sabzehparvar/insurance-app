@@ -1,4 +1,5 @@
-import { OrderAddress } from "@/interfaces/Order";
+
+import { OrderAddress } from "@/context/formContext";
 import { Dispatch, SetStateAction, useEffect, useState } from "react";
 
 export const useGetAddresses = (

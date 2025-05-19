@@ -1,7 +1,7 @@
 import { CloseIcon } from "@/utils/icons";
 import Styles from "./styles.module.css";
-import CustomInput from "@/components/ui/CustomInput";
-import { OrderAddress } from "@/interfaces/Order";
+import { OrderAddress } from "@/context/formContext";
+import CustomInput from "@/component/ui/CustomInput";
 import { ChangeEvent } from "react";
 
 interface AddressItemProps {

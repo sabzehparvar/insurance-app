@@ -1,6 +1,6 @@
 import { useRouter } from "next/navigation";
-import { useGetAddresses } from "./API/GET/useGetAddresses";
-import { useAddressContext } from "./context/useAddressContext";
+import { useGetAddresses } from "../API/GET/useGetAdresses";
+import { useAddressContext } from "./useAdressContext";
 
 export const useHandleAddresses = () => {
   const { setAddresses, addresses, setDeletingAddress } = useAddressContext();

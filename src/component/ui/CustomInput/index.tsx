@@ -1,5 +1,26 @@
-import { InputProps } from "@/interfaces/Input";
+
 import Styles from "./styles.module.css";
+export interface InputProps {
+  type?: string;
+  name: string;
+  value: string;
+  placeholder?: string;
+  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
+  errorMessage?: string;
+  required?: boolean;
+  errorDisabled?: boolean;
+  checked?: boolean;
+  inputMode?:
+    | "search"
+    | "email"
+    | "tel"
+    | "text"
+    | "url"
+    | "none"
+    | "numeric"
+    | "decimal"
+    | undefined;
+}
 
 const CustomInput = (props: InputProps) => {
   return (
