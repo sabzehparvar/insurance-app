@@ -1,16 +1,6 @@
+import { InputProps } from "@/interfaces/Input";
+import Styles from "./styles.module.css";
 
-import Styles from "./style.module.css";
-export interface InputProps {
-  type?: string;
-  name: string;
-  value: string;
-  placeholder?: string;
-  onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
-  errorMessage?: string;
-  required?: boolean;
-  errorDisabled?: boolean;
-  checked?: boolean;
-}
 const CustomInput = (props: InputProps) => {
   return (
     <div className={Styles.inputWrapper}>
