@@ -13,7 +13,7 @@ export const useSubmitInsurance = () => {
       const response = await fetch(
         `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/completion/`,
         {
-          method: "POST", // HTTP method
+          method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
@@ -21,13 +21,20 @@ export const useSubmitInsurance = () => {
           body: JSON.stringify(data),
         }
       );
+
+      const newData = await response.json();
+
+      if (newData.errors) {
+        alert(newData.errors[0]);
+      }
+
       if (!response.ok) {
-        throw new Error("Failed to fetch addresses");
+        throw new Error("Failed to submit insurance");
       }
 
       router.replace("/successful-submit");
-      // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
+      alert(error);
       router.push("/?modal=error");
     } finally {
       setLoading(false);

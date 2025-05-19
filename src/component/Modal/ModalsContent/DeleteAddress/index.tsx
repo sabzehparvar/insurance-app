@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import CustomButton from "@/components/ui/CustomButton";
@@ -20,7 +21,7 @@ const DeleteAddress = () => {
     );
 
     setDeletingAddress(undefined);
-    router.push("/?modal=address", { scroll: false });
+    router.replace("/?modal=address", { scroll: false });
   };
 
   useEffect(() => {

@@ -56,20 +56,22 @@ const OwnerInformationForm = () => {
           addresses.find((address) => address.id === formData.addressId)
             ?.details
         ) : (
-          <p className={`${Styles.text} ${errors.address && Styles.error}`}>
+          <p className={`${Styles.text} ${errors.addressId && Styles.error}`}>
             لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
           </p>
         )}
 
-        <CustomButton
-          variant="tertiary"
-          type="button"
-          onClick={() => {
-            router.push("/?modal=address", { scroll: false });
-          }}
-        >
-          انتخاب از آدرس‌های من
-        </CustomButton>
+        {formData.addressId ? null : (
+          <CustomButton
+            variant="tertiary"
+            type="button"
+            onClick={() => {
+              router.push("/?modal=address", { scroll: false });
+            }}
+          >
+            انتخاب از آدرس‌های من
+          </CustomButton>
+        )}
       </div>
 
       <div className={Styles.buttonWrapper}>
@@ -77,9 +79,7 @@ const OwnerInformationForm = () => {
           variant="primary"
           type="submit"
           isLoading={submitLoading}
-          disabled={
-            !formData.nationalId || !formData.phoneNumber || !formData.addressId
-          }
+          disabled={!formData.nationalId || !formData.phoneNumber}
           onClick={() => {}}
         >
           {submitLoading && <Spinner />}
