@@ -1,16 +1,17 @@
 "use client";
-
+import CustomInput from "@/components/ui/CustomInput";
 import { useHandleFormActions } from "@/hooks/useHandleFormActions";
 import Styles from "./styles.module.css";
-import CustomInput from "@/component/ui/CustomInput";
-import CustomButton from "@/component/ui/CustomButton";
+import CustomButton from "@/components/ui/CustomButton";
 import { useValidateForm } from "@/hooks/useValidateForm";
 import { useRouter } from "next/navigation";
+import { useAddressContext } from "@/hooks/context/useAddressContext";
 
 const OwnerInformationForm = () => {
   const { formData, handleChange, handleSubmit } = useHandleFormActions();
   const { errors, validateForm } = useValidateForm(formData);
   const router = useRouter();
+  const { addresses } = useAddressContext();
 
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -48,9 +49,14 @@ const OwnerInformationForm = () => {
       <div className={Styles.wrapper}>
         <h3 className={Styles.heading}>آدرس جهت درج روی بیمه نامه </h3>
 
-        <p className={`${Styles.text} ${errors.address && Styles.error}`}>
-          لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
-        </p>
+        {formData.addressId ? (
+          addresses.find((address) => address.id === formData.addressId)
+            ?.details
+        ) : (
+          <p className={`${Styles.text} ${errors.address && Styles.error}`}>
+            لطفا آدرسی را که می‌خواهید روی بیمه‌نامه درج شود، وارد کنید.
+          </p>
+        )}
 
         <CustomButton
           variant="tertiary"

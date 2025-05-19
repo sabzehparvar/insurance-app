@@ -1,5 +1,5 @@
 
-import Styles from "./styles.module.css";
+import Styles from "./style.module.css";
 export interface InputProps {
   type?: string;
   name: string;
@@ -9,9 +9,8 @@ export interface InputProps {
   errorMessage?: string;
   required?: boolean;
   errorDisabled?: boolean;
-
+  checked?: boolean;
 }
-
 const CustomInput = (props: InputProps) => {
   return (
     <div className={Styles.inputWrapper}>
@@ -24,6 +23,7 @@ const CustomInput = (props: InputProps) => {
         placeholder={props.placeholder}
         onChange={props.onChange}
         required={props.required}
+        checked={props.checked}
       />
 
       {!props.errorDisabled && (
