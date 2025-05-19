@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
 import CustomButton from "@/components/ui/CustomButton";
@@ -15,7 +14,7 @@ const DeleteAddress = () => {
     useAddressContext();
   const router = useRouter();
 
-  const DeleteAddress = () => {
+  const RemoveAddress = () => {
     setAddresses((prev) =>
       prev.filter((address) => address.id !== deletingAddress?.id)
     );
@@ -44,7 +43,7 @@ const DeleteAddress = () => {
         </div>
 
         <ModalFooter>
-          <CustomButton onClick={DeleteAddress} style={{ width: "100%" }}>
+          <CustomButton onClick={RemoveAddress} style={{ width: "100%" }}>
             تایید
           </CustomButton>
 
