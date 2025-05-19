@@ -1,5 +1,5 @@
-import { CarInsurance } from "@/interfaces/Car";
 
+import { CarInsurance } from "./interfaces";
 export const CarInsuranceData: CarInsurance = {
   plate: { mainCode: ["988", "ک", "64"], cityCode: 60 },
   insuranceCompany: "پارسیان",

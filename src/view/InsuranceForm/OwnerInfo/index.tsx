@@ -1,4 +1,3 @@
-
 import SectionHeader from "@/component/SectionHeader";
 import Styles from "./styles.module.css";
 import OwnerInformationForm from "./OwnerInfoForm";
