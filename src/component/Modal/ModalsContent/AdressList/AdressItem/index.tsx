@@ -1,7 +1,7 @@
 import { CloseIcon } from "@/utils/icons";
 import Styles from "./styles.module.css";
 import CustomInput from "@/component/ui/CustomInput";
-import { OrderAddress } from "@/context/formContext";
+import { OrderAddress } from "@/context/FormContext";
 
 interface AddressItemProps {
   address: OrderAddress;

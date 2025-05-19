@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, ReactNode, useState } from "react";
+
 export interface OrderInfo {
   nationalId: string;
   phoneNumber: string;
@@ -12,6 +13,7 @@ export interface OrderAddress {
   name: string;
   details: string;
 }
+
 interface FormContextType {
   formData: OrderInfo;
   setFormData: React.Dispatch<React.SetStateAction<OrderInfo>>;

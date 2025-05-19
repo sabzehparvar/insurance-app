@@ -1,6 +1,6 @@
 import { CloseIcon } from "@/utils/icons";
 import Styles from "./styles.module.css";
-import { OrderAddress } from "@/context/formContext";
+import { OrderAddress } from "@/context/FormContext";
 import CustomInput from "@/component/ui/CustomInput";
 import { ChangeEvent } from "react";
 

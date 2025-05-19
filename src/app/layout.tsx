@@ -1,7 +1,7 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import ModalManager from "@/component/Modal/ModalManager";
-import { FormProvider } from "@/context/formContext";
+import { FormProvider } from "@/context/FormContext";
 import { AddressProvider } from "@/context/addressContext";
 import { Suspense } from "react";
 import Spinner from "@/component/ui/Spinner";
