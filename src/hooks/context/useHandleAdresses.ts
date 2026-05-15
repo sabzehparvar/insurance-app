@@ -4,7 +4,7 @@ import { useAddressContext } from "./useAdressContext";
 
 export const useHandleAddresses = () => {
   const { setAddresses, addresses, setDeletingAddress } = useAddressContext();
-  const { loading } = useGetAddresses(addresses, setAddresses);
+  const { loading, error } = useGetAddresses(addresses, setAddresses);
   const router = useRouter();
 
   const openDeleteModal = (id: string) => {
@@ -13,5 +13,5 @@ export const useHandleAddresses = () => {
     router.push("/?modal=delete", { scroll: false });
   };
 
-  return { addresses, loading, openDeleteModal };
+  return { addresses, loading, error, openDeleteModal };
 };

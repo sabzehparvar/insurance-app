@@ -1,3 +1,8 @@
+.listWrapper {
+  display: grid;
+  gap: 12px;
+}
+
 .list {
   margin-block: 8px;
   display: grid;
@@ -5,4 +10,19 @@
   padding: 8px 12px;
   max-height: 70vh;
   overflow: auto;
+}
+
+.errorMessage {
+  color: var(--error);
+  background-color: rgba(230, 31, 16, 0.12);
+  border: 1px solid rgba(230, 31, 16, 0.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+  line-height: 1.5;
+}
+
+.emptyText {
+  color: var(--secondary-text);
+  text-align: center;
+  padding: 12px 14px;
 }

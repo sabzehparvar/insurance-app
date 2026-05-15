@@ -11,21 +11,27 @@ const AddressList = ({
   selectedId: string | undefined;
   setSelectedId: (id: string) => void;
 }) => {
-  const { addresses, loading, openDeleteModal } = useHandleAddresses();
+  const { addresses, loading, error, openDeleteModal } = useHandleAddresses();
 
   return (
-    <ul className={Styles.list}>
+    <div className={Styles.listWrapper}>
       {loading && <Spinner />}
-      {addresses.map((address) => (
-        <AddressItem
-          address={address}
-          key={address.id}
-          selectedValue={selectedId}
-          onChange={setSelectedId}
-          onDelete={openDeleteModal}
-        />
-      ))}
-    </ul>
+      {error && <p className={Styles.errorMessage}>{error}</p>}
+      {!loading && addresses.length === 0 && !error && (
+        <p className={Styles.emptyText}>هنوز هیچ آدرسی بارگذاری نشده است.</p>
+      )}
+      <ul className={Styles.list}>
+        {addresses.map((address) => (
+          <AddressItem
+            address={address}
+            key={address.id}
+            selectedValue={selectedId}
+            onChange={setSelectedId}
+            onDelete={openDeleteModal}
+          />
+        ))}
+      </ul>
+    </div>
   );
 };
 
