@@ -12,10 +12,12 @@
 }
 
 .bottom {
-  width: 100%;
+  width: min(500px, 100%);
+  max-width: 500px;
   animation: slideUp 0.3s ease-in-out;
   position: relative;
   background-color: var(--background);
+  margin: 0 auto;
 }
 
 @keyframes slideUp {

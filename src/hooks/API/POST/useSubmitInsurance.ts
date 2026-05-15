@@ -9,27 +9,37 @@ export const useSubmitInsurance = () => {
   const submitInsurance = async (data: OrderInfo): Promise<void> => {
     setLoading(true);
 
+    const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL;
+    const useMockSubmit =
+      process.env.NEXT_PUBLIC_MOCK_SUBMIT === "true" || !backendUrl;
+
+    if (useMockSubmit) {
+      router.replace("/successful-submit");
+      setLoading(false);
+      return;
+    }
+
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/order/completion/`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          credentials: "include",
-          body: JSON.stringify(data),
-        }
-      );
+      const response = await fetch(`${backendUrl}/order/completion/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+        body: JSON.stringify(data),
+      });
 
-      const newData = await response.json();
+      const responseData = await response.json().catch(() => null);
 
-      if (newData.errors) {
-        alert(newData.errors[0]);
+      if (responseData?.errors?.length) {
+        alert(responseData.errors[0]);
       }
 
       if (!response.ok) {
-        throw new Error("Failed to submit insurance");
+        const message =
+          responseData?.errors?.[0] ||
+          "خطا در ارسال اطلاعات. لطفا دوباره تلاش کنید.";
+        throw new Error(message);
       }
 
       router.replace("/successful-submit");
